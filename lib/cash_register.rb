@@ -6,7 +6,7 @@ class CashRegister
 
   def initialize(discount = 0)
     @total = 0
-    @discount = discount.to_i
+    @discount = discount.to_f/100
   end
 
   def add_item(item, price, qty = 1)
@@ -16,7 +16,7 @@ class CashRegister
 
   def apply_discount
     if @discount > 0
-      @total *= 1-(@discount/100)
+      @total *= 1-@discount
       msg = "After the discount, the total comes to $#{@total}."
     else
       error_message =  "There is no discount to apply."

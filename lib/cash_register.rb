@@ -1,6 +1,6 @@
 class CashRegister
 
-  attr_accessor :total, :discount, :items
+  #attr_accessor :total, :discount, :items
 
   @items = []
 
@@ -20,6 +20,7 @@ class CashRegister
 
   def apply_discount
     if @discount > 0
+      self.total
       puts "After the discount, the total comes to $#{self.total}."
     elsif @discount == 0
       puts "There is no discount to apply"

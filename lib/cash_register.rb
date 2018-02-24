@@ -17,6 +17,7 @@ class CashRegister
     qty.times do @last_items << item
     end
     @items << @last_items
+    @items.flatten
   end
 
   def apply_discount
